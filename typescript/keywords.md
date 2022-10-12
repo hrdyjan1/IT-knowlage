@@ -20,7 +20,6 @@ namespace Fruit {
 // Usages of namespace
 Button.Variant
 TextInput.Variant
-
 ```
 
 ## Typeof
@@ -64,7 +63,6 @@ const bank2: Bank = Bank.createSuperBank() // Instance
 Bank.c...
 bank1.c...
 bank2.c...
-
 ```
 
 ## Keyof
@@ -132,7 +130,6 @@ type NameType = ConnectNameType extends (fristParametr: infer A, ...args: any[])
 const mojeJmeno: NameType = {firstName: 'Jan', secondName: 'Hrdy'}
 
 foo.connectName(mojeJmeno)
-
 
 ```
 
