@@ -113,12 +113,39 @@ const objectWithNames = [JaneDoe, CharlesBridge]
 typeof objectWithNames[0].name === 'string';
 ```
 
-### Generic wrapper for function
+### Generic
+
+* avanced
+
+```typescript
+interface IHuman {
+    info: {
+        age: number
+    };
+    name: {
+        first: string,
+        last: string
+    }    
+}
+
+// IMPLEMENTATION
+type TODOType = any
+
+// TEST
+const John: TODOType = {key: 'info', bonus: {age: 50}}
+const Jane: TODOType = {key: 'name', bonus: {first: 'Jane', last: 'Doe'}}
+
+const Tom1: TODOType = {key: 'aaaaaaaaabbbbbbccccc', bonus: {first: 'Jane', last: 'Doe'}} // ERROR - key
+const Tom2: TODOType = {key: 'name', bonus: {first123456: 'Jane', last: 'Doe'}} // ERROR - first
+const Tom3: TODOType = {key: 'name', bonus: {age: 20} // ERROR - key/age missmatch
+```
+
+### Generic
 
 * intermediate
 * bonus - React solution with React.useCallback
 * Task
-  * create function \``` getFunctionWrappper` ``, that accept function and return same function type
+  * create function \``` getFunctionWrappper` ``, that accept function and return same function typ&#x20;
   * add some inner logic to \``` getFunctionWrappper` ``
   * `bonus - create React.useCallback function`
 
@@ -158,10 +185,11 @@ function LastComponent<Func extends SomeFunction>({handle}: {handle: Func}) {
 // TEST 
 const add = (a1:number, a2:number) => a1 + a2
 const addWrapper = getFunctionWrapper(add)
+// type addWrapper ===
 
 ```
 
-### Remove first element
+### Infer
 
 * basics/intermediate
 * Task
@@ -178,7 +206,7 @@ type arr3 = FilterFirstElement<[string, number]> // [number]
 type arr4 = FilterFirstElement<[string, number, boolean]> // [number, boolean]
 ```
 
-### Enhance arguments number
+### Enhance args number
 
 * advance
 * Task
