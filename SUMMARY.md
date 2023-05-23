@@ -8,4 +8,5 @@
   * [Excercises](typescript/excercises.md)
   * [TOP NOTCH](typescript/top-notch.md)
   * [Keywords](typescript/keywords.md)
+  * [🐣 WTF](typescript/wtf.md)
 * [Challenging knowledge](challenging-knowledge.md)
