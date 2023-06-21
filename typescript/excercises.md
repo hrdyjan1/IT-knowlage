@@ -198,3 +198,45 @@ type foo = (age: number) => void
 type fooEnahnced = Enhance<foo>
 ```
 
+### Type from object key/value
+
+* advance
+* Task
+  * create type `SpecObject` that will accept object and create data type of only object values for specific keys
+
+```typescript
+type Entity = {
+  human: {
+    name: string;
+  };
+  animal: {
+    age: number;
+  };
+};
+
+// SOLUTION
+type SpecObject<T extends object> = {
+  [K in keyof T]: {
+    value: K;
+    params: T[K];
+  };
+}[keyof T];
+
+// TEST
+type OneEntityType = SpecObject<Entity>;
+
+const person: OneEntityType = {
+  value: 'human',
+  params: {
+    name: 'Tim',
+  },
+};
+
+const dog: OneEntityType = {
+  value: 'animal',
+  params: {
+    age: 5,
+  },
+};
+
+```
